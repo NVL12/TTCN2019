@@ -2,6 +2,10 @@ function navigateToDetail(id) {
     sessionStorage.setItem('id', id);
     window.location.href = './detail.html';
 }
+function navigateToLogin(id) {
+    sessionStorage.setItem('id', id);
+    window.location.href = './detail.html';
+}
 class ImageModel {
     id: number;
     link: string;
