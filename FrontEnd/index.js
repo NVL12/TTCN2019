@@ -1,6 +1,6 @@
 function navigateToDetail(id) {
     sessionStorage.setItem('id', id);
-    window.location.href = './detail.html';
+    window.location.href = 'post-detail/detail.html';
 }
 var ImageModel = /** @class */ (function () {
     function ImageModel(init) {
