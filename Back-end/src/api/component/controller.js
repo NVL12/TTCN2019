@@ -13,7 +13,11 @@ export const create = ({ bodymen: { body } }, res, next) =>
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
   Component.find(query, select, cursor).populate(populate)
-    .then((components) => components.map((component) => component.view()))
+    .then(async (components) => {
+      const results = components.map(component => component.view(true));
+      const count = await Component.countDocuments(query);
+      return { results: results, count: count }
+    })
     .then(success(res))
     .catch(next)
 

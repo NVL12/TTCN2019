@@ -8,7 +8,11 @@ const populate = [{
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
   User.find(query, select, cursor).populate(populate)
-    .then((users) => users.map((user) => user.view()))
+    .then(async (users) => {
+      const results = users.map(user => user.view(true));
+      const count = await User.countDocuments(query);
+      return { results: results, count: count }
+    })
     .then(success(res))
     .catch(next)
 
