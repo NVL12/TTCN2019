@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b79a790-7928-4c5c-a1fd-f91cdd5187e6" name="Default Changelist" comment="" />
+    <list default="true" id="6b79a790-7928-4c5c-a1fd-f91cdd5187e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/dangbai/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/dangbai/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/dangbai/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/dangbai/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/dangbai/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/dangbai/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/post-detail/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,27 +21,99 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FontEnd/index.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/dangbai/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2376" />
+            <state relative-caret-position="484">
+              <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+            </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FontEnd/detail.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/post-detail/detail.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="-22">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/post-detail/detail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#39#44#0" expanded="true" />
+                <element signature="e#133#139#0" expanded="true" />
+                <element signature="e#238#244#0" expanded="true" />
+                <element signature="e#255#261#0" expanded="true" />
+                <element signature="e#280#285#0" expanded="true" />
+                <element signature="e#402#408#0" expanded="true" />
+                <element signature="e#462#467#0" expanded="true" />
+                <element signature="e#501#506#0" expanded="true" />
+                <element signature="e#619#624#0" expanded="true" />
+                <element signature="e#660#666#0" expanded="true" />
+                <element signature="e#673#679#0" expanded="true" />
+                <element signature="e#692#697#0" expanded="true" />
+                <element signature="e#777#783#0" expanded="true" />
+                <element signature="e#997#1002#0" expanded="true" />
+                <element signature="e#1031#1037#0" expanded="true" />
+                <element signature="e#1044#1050#0" expanded="true" />
+                <element signature="e#1161#1167#0" expanded="true" />
+                <element signature="e#1234#1240#0" expanded="true" />
+                <element signature="e#1395#1401#0" expanded="true" />
+                <element signature="e#1472#1478#0" expanded="true" />
+                <element signature="e#1486#1492#0" expanded="true" />
+                <element signature="e#1535#1541#0" expanded="true" />
+                <element signature="e#1574#1580#0" expanded="true" />
+                <element signature="e#1710#1716#0" expanded="true" />
+                <element signature="e#1802#1808#0" expanded="true" />
+                <element signature="e#1992#1999#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/dangbai/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FrontEnd/tsconfig.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>replace</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/FrontEnd/dangbai/index.js" />
+        <option value="$PROJECT_DIR$/FrontEnd/index.ts" />
+        <option value="$PROJECT_DIR$/FrontEnd/dangbai/index.html" />
+        <option value="$PROJECT_DIR$/FrontEnd/tsconfig.json" />
+        <option value="$PROJECT_DIR$/FrontEnd/dangbai/index.ts" />
+      </list>
+    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -55,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -66,19 +146,48 @@
             <path>
               <item name="TTCN2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="TTCN2019" type="462c0819:PsiDirectoryNode" />
-              <item name="FontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TTCN2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTCN2019" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="dangbai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TTCN2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTCN2019" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="dangbai" type="462c0819:PsiDirectoryNode" />
+              <item name="index.ts" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="TTCN2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTCN2019" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="post-detail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TTCN2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TTCN2019" type="462c0819:PsiDirectoryNode" />
+              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="post-detail" type="462c0819:PsiDirectoryNode" />
+              <item name="detail.ts" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunDashboard">
@@ -104,24 +213,22 @@
       <option name="presentableId" value="Default" />
       <updated>1571887664622</updated>
       <workItem from="1571887667205" duration="1254000" />
+      <workItem from="1573823974742" duration="1493000" />
+      <workItem from="1573825485700" duration="275000" />
+      <workItem from="1573825778139" duration="4245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1254000" />
+    <option name="totallyTimeSpent" value="7267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -129,6 +236,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32936078" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -136,25 +249,173 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-    <option name="exactExcludedFiles">
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
       <list>
-        <option value="$PROJECT_DIR$/FontEnd/detail.js" />
-        <option value="$PROJECT_DIR$/FontEnd/index.js" />
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
       </list>
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FontEnd/index.html">
+    <entry file="file://$PROJECT_DIR$/FontEnd/index.html" />
+    <entry file="file://$PROJECT_DIR$/FontEnd/detail.ts" />
+    <entry file="file://$PROJECT_DIR$/node_modules/core-js/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2376" />
+        <state relative-caret-position="-1475" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FontEnd/detail.ts">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <caret line="266" column="37" selection-start-line="266" selection-start-column="20" selection-end-line="266" selection-end-column="37" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2239">
+          <caret line="269" column="25" selection-start-line="269" selection-start-column="25" selection-end-line="269" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="278" column="19" selection-start-line="278" selection-start-column="19" selection-end-line="278" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/dangbai/New Text Document.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-858" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ckeditor/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="23" column="506" selection-start-line="23" selection-start-column="499" selection-end-line="23" selection-end-column="506" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/post-detail/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1584" />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2015.core.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="285" column="4" selection-start-line="285" selection-start-column="4" selection-end-line="285" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/dangbai/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9569" column="4" selection-start-line="9569" selection-start-column="4" selection-end-line="9569" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/post-detail/detail.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/post-detail/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#39#44#0" expanded="true" />
+            <element signature="e#133#139#0" expanded="true" />
+            <element signature="e#238#244#0" expanded="true" />
+            <element signature="e#255#261#0" expanded="true" />
+            <element signature="e#280#285#0" expanded="true" />
+            <element signature="e#402#408#0" expanded="true" />
+            <element signature="e#462#467#0" expanded="true" />
+            <element signature="e#501#506#0" expanded="true" />
+            <element signature="e#619#624#0" expanded="true" />
+            <element signature="e#660#666#0" expanded="true" />
+            <element signature="e#673#679#0" expanded="true" />
+            <element signature="e#692#697#0" expanded="true" />
+            <element signature="e#777#783#0" expanded="true" />
+            <element signature="e#997#1002#0" expanded="true" />
+            <element signature="e#1031#1037#0" expanded="true" />
+            <element signature="e#1044#1050#0" expanded="true" />
+            <element signature="e#1161#1167#0" expanded="true" />
+            <element signature="e#1234#1240#0" expanded="true" />
+            <element signature="e#1395#1401#0" expanded="true" />
+            <element signature="e#1472#1478#0" expanded="true" />
+            <element signature="e#1486#1492#0" expanded="true" />
+            <element signature="e#1535#1541#0" expanded="true" />
+            <element signature="e#1574#1580#0" expanded="true" />
+            <element signature="e#1710#1716#0" expanded="true" />
+            <element signature="e#1802#1808#0" expanded="true" />
+            <element signature="e#1992#1999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/dangbai/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FrontEnd/dangbai/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -1,4 +1,4 @@
-import * as CKEDITOR from '../ckeditor/ckeditor';
+import * as CKEDITOR from '../ckeditor/ckeditor.js';
 
 class PostDetailModel {
     id: number;
@@ -11,14 +11,25 @@ class PostDetailModel {
 }
 
 function onLoad() {
-    CKEDITOR.repalce('post');
+    // var CKEDITOR: any;
+    // CKEDITOR.replace('post');
 }
 
 function submitForm() {
-    // alert(CKEDITOR.instances.post.getData());
-    // const postDetail: PostDetailModel = new PostDetailModel({
-    //     title: document.getElementById('title').getAttribute('value'),
-    //     content: CKEDITOR.instances.post.getData()
-    // });
-    console.log(document.getElementById('title').value)
+    // alert('submit form');
+    // var CKEDITOR: any;
+    alert(CKEDITOR.instances.content.getData());
+
+    const postDetail: PostDetailModel = new PostDetailModel({
+        id: 1,
+        // @ts-ignore
+        title: document.getElementById('title').value,
+        content: CKEDITOR.instances.content.getData(),
+        imageLinks: []
+    });
+    console.log(postDetail);
+}
+
+function uploadImage() {
+    console.log('Call API');
 }
