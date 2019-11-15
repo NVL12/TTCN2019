@@ -33,6 +33,10 @@ const userSchema = new Schema({
   picture: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Image'
+  },
+  blocked: {
+    type: Boolean,
+    default: false
   }
 }, {
   timestamps: true

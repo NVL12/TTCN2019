@@ -10,7 +10,7 @@ const componentSchema = new Schema({
     type: String,
     trim: true
   },
-  iamges: [{
+  images: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Image'
   }]
@@ -29,7 +29,7 @@ componentSchema.methods = {
       id: this.id,
       title: this.title,
       description: this.description,
-      iamges: this.iamges,
+      images: this.images,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

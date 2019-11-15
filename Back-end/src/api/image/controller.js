@@ -20,7 +20,7 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
 export const show = ({ params }, res, next) =>
   Image.findById(params.id)
     .then(notFound(res))
-    .then((image) => image ? image.view() : null)
+    .then((image) => image ? image.view(true) : null)
     .then(success(res))
     .catch(next)
 

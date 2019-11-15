@@ -24,7 +24,7 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
 export const show = ({ params }, res, next) =>
   Component.findById(params.id).populate(populate)
     .then(notFound(res))
-    .then((component) => component ? component.view() : null)
+    .then((component) => component ? component.view(true) : null)
     .then(success(res))
     .catch(next)
 
