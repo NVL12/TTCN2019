@@ -1,7 +1,8 @@
 import { Router } from 'express'
 import user from './user'
 import auth from './auth'
-import link from './link'
+import component from './component'
+import image from './image'
 
 const router = new Router()
 
@@ -30,6 +31,7 @@ const router = new Router()
  */
 router.use('/users', user)
 router.use('/auth', auth)
-router.use('/links', link)
+router.use('/components', component)
+router.use('/images', image)
 
 export default router

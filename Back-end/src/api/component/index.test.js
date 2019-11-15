@@ -1,23 +1,23 @@
 import request from 'supertest'
 import { apiRoot } from '../../config'
 import express from '../../services/express'
-import routes, { Link } from '.'
+import routes, { Component } from '.'
 
 const app = () => express(apiRoot, routes)
 
-let link
+let component
 
 beforeEach(async () => {
-  link = await Link.create({})
+  component = await Component.create({})
 })
 
-test('POST /links 201', async () => {
+test('POST /components 201', async () => {
   const { status, body } = await request(app())
     .post(`${apiRoot}`)
-    .send({ link: 'test', name: 'test' })
+    .send({ component: 'test', name: 'test' })
   expect(status).toBe(201)
   expect(typeof body).toEqual('object')
-  expect(body.link).toEqual('test')
+  expect(body.component).toEqual('test')
   expect(body.name).toEqual('test')
 })
 

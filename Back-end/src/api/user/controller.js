@@ -2,14 +2,18 @@ import { success, notFound } from '../../services/response/'
 import { User } from '.'
 import { sign } from '../../services/jwt'
 
+const populate = [{
+  path: 'picture'
+}]
+
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
-  User.find(query, select, cursor)
+  User.find(query, select, cursor).populate(populate)
     .then((users) => users.map((user) => user.view()))
     .then(success(res))
     .catch(next)
 
 export const show = ({ params }, res, next) =>
-  User.findById(params.id)
+  User.findById(params.id).populate(populate)
     .then(notFound(res))
     .then((user) => user ? user.view() : null)
     .then(success(res))
@@ -39,7 +43,7 @@ export const create = ({ bodymen: { body } }, res, next) =>
     })
 
 export const update = ({ bodymen: { body }, params, user }, res, next) =>
-  User.findById(params.id === 'me' ? user.id : params.id)
+  User.findById(params.id === 'me' ? user.id : params.id).populate(populate)
     .then(notFound(res))
     .then((result) => {
       if (!result) return null
@@ -60,7 +64,7 @@ export const update = ({ bodymen: { body }, params, user }, res, next) =>
     .catch(next)
 
 export const updatePassword = ({ bodymen: { body }, params, user }, res, next) =>
-  User.findById(params.id === 'me' ? user.id : params.id)
+  User.findById(params.id === 'me' ? user.id : params.id).populate(populate)
     .then(notFound(res))
     .then((result) => {
       if (!result) return null

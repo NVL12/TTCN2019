@@ -3,7 +3,8 @@ import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
 import { create, index, show, update, destroy } from './controller'
 import { schema } from './model'
-export Link, { schema } from './model'
+import { token } from '../../services/passport';
+export Component, { schema } from './model'
 
 const router = new Router()
 const { link, name } = schema.tree
@@ -19,6 +20,7 @@ const { link, name } = schema.tree
  * @apiError 404 Link not found.
  */
 router.post('/',
+  token({ required: true }),
   body({ link, name }),
   create)
 
@@ -31,6 +33,7 @@ router.post('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/',
+  token({ required: true }),
   query(),
   index)
 
@@ -43,6 +46,7 @@ router.get('/',
  * @apiError 404 Link not found.
  */
 router.get('/:id',
+  token({ required: true }),
   show)
 
 /**
@@ -56,6 +60,7 @@ router.get('/:id',
  * @apiError 404 Link not found.
  */
 router.put('/:id',
+  token({ required: true }),
   body({ link, name }),
   update)
 
@@ -67,6 +72,7 @@ router.put('/:id',
  * @apiError 404 Link not found.
  */
 router.delete('/:id',
+  token({ required: true }),
   destroy)
 
 export default router
