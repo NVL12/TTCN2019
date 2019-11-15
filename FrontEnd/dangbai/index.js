@@ -1,13 +1,20 @@
 "use strict";
 exports.__esModule = true;
-// export = CKEDITOR;
 var CKEDITOR = require("../ckeditor/ckeditor");
+var PostDetailModel = /** @class */ (function () {
+    function PostDetailModel(init) {
+        Object.assign(this, init);
+    }
+    return PostDetailModel;
+}());
 function onLoad() {
-    var CKEDITOR;
     CKEDITOR.repalce('post');
 }
 function submitForm() {
-    // alert('submit form');
-    // var CKEDITOR: any;
-    alert(CKEDITOR.instances.post.getData());
+    // alert(CKEDITOR.instances.post.getData());
+    // const postDetail: PostDetailModel = new PostDetailModel({
+    //     title: document.getElementById('title').getAttribute('value'),
+    //     content: CKEDITOR.instances.post.getData()
+    // });
+    console.log(document.getElementById('title').value);
 }
