@@ -22,7 +22,9 @@ const { email, password, name, picture, role } = schema.tree
  */
 router.get('/',
   token({ required: true, roles: ['admin'] }),
-  query(),
+  query({
+    role: String
+  }),
   index)
 
 /**
