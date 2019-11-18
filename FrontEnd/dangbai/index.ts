@@ -20,14 +20,20 @@ function submitForm() {
     // var CKEDITOR: any;
     alert(CKEDITOR.instances.content.getData());
 
-    const postDetail: PostDetailModel = new PostDetailModel({
+    // const postDetail: PostDetailModel = new PostDetailModel({
+    //     id: 1,
+    //     // @ts-ignore
+    //     title: document.getElementById('title').value,
+    //     content: CKEDITOR.instances.content.getData(),
+    //     imageLinks: []
+    // });
+    console.log(new PostDetailModel({
         id: 1,
         // @ts-ignore
         title: document.getElementById('title').value,
         content: CKEDITOR.instances.content.getData(),
         imageLinks: []
-    });
-    console.log(postDetail);
+    }));
 }
 
 function uploadImage() {
