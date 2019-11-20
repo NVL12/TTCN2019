@@ -70,19 +70,21 @@
     </div>
     <div class="FormRegister" id="content">
         <form action="" class="dangbai">
-            <h1 class="title">NÔI DUNG BÀI ĐĂNG</h1>
-				<div class="tieude">
-				<input class="inputtieude" type="text" placeholder="tiêu đề:"/>
+            <h1 class="titlebaidang">NỘI DUNG BÀI ĐĂNG</h1>
+				<div class="tieude" >
+				<label style="color:white">Tiêu đề:</label></br>
+				<input class="inputtieude" type="text" />
 				</div>
 				<div class="noidung">
-					<label>Nội dung:</label>
+					<label style="color:white">Nội dung:</label>
 					<textarea id="nd" rows="1" cols="1">
 					</textarea>
 					<script>CKEDITOR.replace('nd');</script>
 				</div>
 				<div class="anh">
-					<input class="inputanh" type="text" placeholder="Ảnh:"/>
-					<input type="file" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
+				<label style="color:white">Ảnh:</label></br>
+					<input class="inputanh" type="text" />
+					<input type="file" style="color:white" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
 				</div>
                 <div>
                     <button class="buttondb" type="submit" align="center" onclick="submitForm()">ĐĂNG BÀI </button>
