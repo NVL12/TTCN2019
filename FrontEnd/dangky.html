@@ -68,7 +68,7 @@
 
     </div>
     <div class="FormRegister" id="content" >
-            <form action="" class="register">
+            <form action="" class="register form-group" >
                 <h1 class="title">ĐĂNG KÝ THÀNH VIÊN</h1>
                 <fieldset class="row1">
                     <legend>Thông tin chi tiết
@@ -76,17 +76,17 @@
                     <p>
                         <label>Username *
                         </label>
-                        <input type="text"/>  
+                        <input type="text" class="form-control"/>  
                     </p>
                     <p>
                         <label>Mật Khẩu*
                         </label>
-                        <input type="text"/>
+                        <input type="text" class="form-control"/>
                     </p>
                     <p>
                       <label>Nhập Lại Mật Khẩu*
                       </label>
-                      <input type="text"/>
+                      <input type="text" class="form-control"/>
                       </label>
                     </p>
                 </fieldset>
@@ -96,19 +96,19 @@
                     <p>
                         <label>Email *        
                         </label>
-                        <input type="text" class="long"/>
+                        <input type="text" class="long form-control" />
                     </p>
                     <p>
                         <label>Số điện thoại *
                         </label>
                         <input type="text" maxlength="10"
-                        class="long" />
+                        class="long form-control"  />
                     </p>
         
                     <p>
                         <label>Thành phố *
                         </label>
-                        <input type="text" class="long"/>
+                        <input type="text" class="long form-control"/>
                     </p>
         
         
@@ -118,15 +118,15 @@
                     </legend>
                     <p>
                         <label>Giới tính *</label>
-                        <input type="radio" name="gender" value="radio"/>
+                        <input type="radio" name="gender" value="radio" class="form-control"/>
                         <label class="gender">Nam</label>
-                        <input type="radio" name="gender" value="radio"/>
+                        <input type="radio" name="gender" value="radio" class="form-control"/>
                         <label class="gender">Nữ</label>
                     </p>
                     <p>
                         <label>Ngày sinh *
                         </label>
-                        <select class="date">
+                        <select class="date form-control">
                             <option value="1">01
                             </option>
                             <option value="2">02
@@ -190,7 +190,7 @@
                             <option value="31">31
                             </option>
                         </select>
-                        <select>
+                        <select class="form-control">
                             <option value="1">Tháng 1
                             </option>
                             <option value="2">Tháng 2
@@ -216,7 +216,7 @@
                             <option value="12">Tháng 12
                             </option>
                         </select>
-                        <input class="year" type="text" size="4" maxlength="4" />Ví dụ 1976
+                        <input class="year form-control" type="text" size="4" maxlength="4"/>Ví dụ 1976
                     </>
                     <div>
                       <button class="button" type="submit"align="center" >ĐĂNG KÝ </button>
