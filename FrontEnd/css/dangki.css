@@ -3,6 +3,9 @@ body{
     width: 100%;
     height: 100%;
 }
+*{
+    font-family: "Interstate Light",Helvetica,Arial,sans-serif;
+}
 p {
     padding: 7px 0 7px 0;
     font-weight: 500;
@@ -36,20 +39,22 @@ h1.title{
     
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 10%;
+    margin-top: 7%;
+
 }
 .container nav ul li .view{
     color: red;
 }
 
 form.register {
-    width: 80%;
+    width: 100%;
     margin: 0px auto 0px auto;
     margin-bottom: 10px;
     height: 450px;
     background-color: #0f88ff;
     padding: 5px;
     margin-left: auto;
+    height: 75%;
 }
 
 form p {
@@ -71,7 +76,7 @@ form.register legend {
     padding: 2px;
     margin-left: 20%;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 100;
 }
 
@@ -82,6 +87,7 @@ form.register label {
     text-align: right;
     margin-right: 6px;
     margin-top: 2px;
+    font-size: 15px;
     
 }
 
@@ -105,7 +111,7 @@ form.register input.short {
 form.register input[type=radio] {
     float: left;
     width: 15px;
-    margin-left: 30px;
+    margin-left: -2px;
 }
 
 form.register label.gender {
@@ -119,7 +125,7 @@ form.register label.gender {
 
 form.register input[type=text] {
     border: 1px solid #E1E1E1;
-    height: 18px;
+    height: 25px;
     width: 200px;
     margin-left: 30px;
 }
@@ -131,20 +137,21 @@ form.register input[type=password] {
 
 .button {
     background: #abda0f;
-    padding: 8px 10px 8px;
+    padding: 8px 10px 8px ;
     color: #fff;
     text-decoration: none;
     border: 2px solid red;
-     padding: 10px;
+     padding: 10px !important;
     border-radius: 25px;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 50px;
-    margin-left: 20%;
+    margin-left: 40%;
+   
 }
 
 form.register input[type=text].year {
     border: 1px solid #E1E1E1;
-    height: 18px;
+    height: 25px;
     width: 70px;
 }
 
@@ -155,16 +162,20 @@ form.register input[type=checkbox] {
 
 form.register select {
     border: 1px solid #E1E1E1;
-    width: 130px;
+    width: 130px !important;
     float: left;
+    height: 25px;
     margin-bottom: 3px;
     color: #505050;
     margin-right: 5px;
+    font-size: 10px !important;
+   
 }
+
 
 form.register select.date {
     width: 40px;
-    margin-left: 30px;
+    margin-left: -2px;
 }
 
 input:focus, select:focus {

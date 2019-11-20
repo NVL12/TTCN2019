@@ -1,7 +1,9 @@
 /* Base */
 html {
   overflow-x: hidden; }
-
+*{
+  font-family: "Interstate Light",Helvetica,Arial,sans-serif;
+}
 body {
   line-height: 1.7;
   color: gray;
