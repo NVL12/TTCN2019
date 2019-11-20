@@ -175,3 +175,52 @@ p.info {
     font-size: 7pt;
     color: gray;
 }
+.dangbai{
+	height:
+}
+form.dangbai {
+    width: 80%;
+    margin: 0px auto 0px auto;
+    margin-bottom: 10px;
+    height: 720px;
+    background-color: #0f88ff;
+    padding: 5px;
+    margin-left: auto;
+}
+.tieude{
+	margin-left:100px;
+	margin-top:30px;
+}
+.inputtieude{
+	height:30px;
+	width:438px;
+}
+.noidung{
+	height: 140px;
+    width: 440px;
+	margin-top:20px;
+	margin-left:100px;
+}
+.anh{
+	margin-left:100px;
+	margin-top:280px;
+}
+.inputanh{
+	height:30px;
+	width:438px;
+}
+.upload-avatar{
+	margin-top:10px;
+}
+.buttondb {
+    background: #abda0f;
+    padding: 8px 10px 8px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid red;
+     padding: 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 50%;
+}

@@ -3,17 +3,19 @@
 	background:white;
 }
 .form-background{
-	background:#FFCCCC;
-	margin-top:120px;
+	background:#0F88FF;
+	margin-top:200px;
 	margin-bottom:10px;
 	padding-top:10px;
 	
 }
-h3{
-	color:white;
+.tieude{
+	color:red;
+	font-size:30px;
+	text-align:center;
+	
 }
 h2{
-	
 	padding-top:20px;
 	padding-left:500px;
 	color: green;
@@ -22,9 +24,11 @@ h2{
 .form-background >h3{
 	text-align:center;
 }
+
 .form-item{
 	margin-bottom:10px;
 }
+
 .upload-avatar{
 	margin-top:15px;
 }
@@ -33,14 +37,23 @@ h2{
 }
 .btn-up{
 	padding:12px 38px;
-	font-size:18px;
+	font-size:25px;
 	text-transform:uppercase;
 	letter-spacing:2px;
-	background:#FF0000;
+
 	color:white;
 	border:none;
 	outline:none;
 	display:table;
 	cursor:pointer;
 	margin:15px auto 31px;
+	
+	background: #abda0f;
+    
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid red;
+   
+    border-radius: 25px;
+   
 }
