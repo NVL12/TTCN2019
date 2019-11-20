@@ -3,6 +3,9 @@ body{
     width: 100%;
     height: 100%;
 }
+*{
+    font-family: "Interstate Light",Helvetica,Arial,sans-serif;
+}
 p {
     padding: 7px 0 7px 0;
     font-weight: 500;
@@ -10,7 +13,7 @@ p {
 }
 
 a {
-    color: #656565;
+    color: #fff;
     text-decoration: none;
 }
 h1 {
@@ -28,36 +31,41 @@ h4 {
     font-weight: 100;
     text-transform: uppercase;
 }
+h1.title{
+    color: red;
+    text-align: center;
+}
 .FormRegister{
     
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 10%;
+    margin-top: 7%;
+
 }
 .container nav ul li .view{
     color: red;
 }
 
 form.register {
-    width: 80%;
+    width: 100%;
     margin: 0px auto 0px auto;
-    margin-top:10% ;
     margin-bottom: 10px;
     height: 450px;
-    background-color: darkcyan;
+    background-color: #0f88ff;
     padding: 5px;
-    margin-left: 10%;
+    margin-left: auto;
+    height: 75%;
 }
 
 form p {
     font-size: 8pt;
     clear: both;
     margin: 0;
-    color: gray;
+    color: #fff;
     padding: 4px;
 }
 form.register fieldset.row1 label {
-    width: 140px;
+    width: 35%;
     /* float: left; */
     text-align: right;
     margin-right: 6px;
@@ -66,19 +74,20 @@ form.register fieldset.row1 label {
 form.register legend {
     color: #abda0f;
     padding: 2px;
-    margin-left: 14px;
+    margin-left: 20%;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 100;
 }
 
 form.register label {
-    color: #444;
-    width: 98px;
+    color: #fff;
+    width: 35%;
     float: left;
     text-align: right;
     margin-right: 6px;
     margin-top: 2px;
+    font-size: 15px;
     
 }
 
@@ -90,9 +99,8 @@ form.register input {
 }
 
 form.register input.long {
-    width: 247px;
     color: #505050;
-    margin-left: 5px;
+    margin-left: 30px;
 }
 
 form.register input.short {
@@ -103,6 +111,7 @@ form.register input.short {
 form.register input[type=radio] {
     float: left;
     width: 15px;
+    margin-left: -2px;
 }
 
 form.register label.gender {
@@ -116,7 +125,9 @@ form.register label.gender {
 
 form.register input[type=text] {
     border: 1px solid #E1E1E1;
-    height: 18px;
+    height: 25px;
+    width: 200px;
+    margin-left: 30px;
 }
 
 form.register input[type=password] {
@@ -126,21 +137,22 @@ form.register input[type=password] {
 
 .button {
     background: #abda0f;
-    padding: 8px 10px 8px;
+    padding: 8px 10px 8px ;
     color: #fff;
     text-decoration: none;
     border: 2px solid red;
-     padding: 10px;
+     padding: 10px !important;
     border-radius: 25px;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 50px;
-    margin-left: 20%;
+    margin-left: 40%;
+   
 }
 
 form.register input[type=text].year {
     border: 1px solid #E1E1E1;
-    height: 18px;
-    width: 30px;
+    height: 25px;
+    width: 70px;
 }
 
 form.register input[type=checkbox] {
@@ -150,15 +162,20 @@ form.register input[type=checkbox] {
 
 form.register select {
     border: 1px solid #E1E1E1;
-    width: 130px;
+    width: 130px !important;
     float: left;
+    height: 25px;
     margin-bottom: 3px;
     color: #505050;
     margin-right: 5px;
+    font-size: 10px !important;
+   
 }
+
 
 form.register select.date {
     width: 40px;
+    margin-left: -2px;
 }
 
 input:focus, select:focus {
@@ -168,4 +185,53 @@ input:focus, select:focus {
 p.info {
     font-size: 7pt;
     color: gray;
+}
+.dangbai{
+	height:
+}
+form.dangbai {
+    width: 80%;
+    margin: 0px auto 0px auto;
+    margin-bottom: 10px;
+    height: 720px;
+    background-color: #0f88ff;
+    padding: 5px;
+    margin-left: auto;
+}
+.tieude{
+	margin-left:100px;
+	margin-top:30px;
+}
+.inputtieude{
+	height:30px;
+	width:438px;
+}
+.noidung{
+	height: 140px;
+    width: 440px;
+	margin-top:20px;
+	margin-left:100px;
+}
+.anh{
+	margin-left:100px;
+	margin-top:280px;
+}
+.inputanh{
+	height:30px;
+	width:438px;
+}
+.upload-avatar{
+	margin-top:10px;
+}
+.buttondb {
+    background: #abda0f;
+    padding: 8px 10px 8px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid red;
+     padding: 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 50%;
 }

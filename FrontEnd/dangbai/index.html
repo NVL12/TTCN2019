@@ -1,72 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đăng bài </title>
     <link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/themes/base/jquery-ui.css" rel="stylesheet">
-	<script src="../ckeditor/ckeditor.js"></script>
-	<script src="index.js"></script>
-  </head>
-  
-  <body onload="onLoad()">
-  
-   <section class="section-up">
-   
-		<div class="col-xs-2 col-sm-3 col-md-3 col-lg-4"></div>
-		<div class="col-xs-8 col-sm-6 col-md-6 col-lg-4 form-background">
-			<h3>NỘI DUNG BÀI ĐĂNG</h3>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div class="row">
-					<form name="upForm" method="POST" enctype="multipart/form-data">
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-12 form-item">
-								<input type="text" id="title" name="title" class="form-control" placeholder="Tiêu đề "/>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-12 form-item">
-								<textarea id="content" rows="6px" cols="52px" placeholder="Nội dung"></textarea>
-								<script>
-									CKEDITOR.replace('content');
-								</script>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-12 form-item">
-							<div class="form-control">Ảnh:</div>
-								<input type="file" id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage()">
-								<p class="text-danger"></p>
-							</div>
-						</div>
-						
-						
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-12 form-item">
-								<!-- Show message-box-->
-							</div>
-						</div>
-						 
-						<div class="form-group">
-							<div class="col-xs-12 col-sm-12 col-md-12 form-item">
-								<input onclick="submitForm()" type="button" name="submit" class="btn-up" value="Đăng bài"/>
-							</div>
-						</div>
-						
-					</form>
-				</div>
-				
-			</div>
-		</div>
-		<div class="col-xs-2 col-sm-3 col-md-3 col-lg-4"></div>
-   </section>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/themes/base/jquery-ui.css" rel="stylesheet">
 
-   
-    <script src="js/bootstrap.js"></script>
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery-ui.js"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Dancing+Script:400,700|Muli:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="../css/dangki.css">
+
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+
+    <link href="../css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="index.js"></script>
+
+    <!--  -->
+    <link rel="stylesheet" href="../css/dangki.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Dancing+Script:400,700|Muli:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="../css/aos.css">
+    <link href="../css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        .nav-link.active.show {
+            background: #34c3eb;
+        }
+        
+        .nav-link {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body onload="onLoad()" style="width: 100%;" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <section class="section-up">
+
+        <div class="logo" style="background-image: url(../images/anh2.jpg); width: 100%;">
+            <a href="index.html">
+                <img src="../images/logo.png" alt="">
+            </a>
+        </div>
+        <div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner">
+
+            <div class="container">
+                <div class="d-flex align-items-center">
+
+                    <div class="mx-auto">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
+                                <li class="view" style="color: red; margin-left: 0%;">
+                                    WEBSITE TRAVEL
+                                </li>
+                                <li class="active">
+                                    <a href="index.html" class="nav-link text-left">Home</a>
+                                </li>
+                                <li><a href="dangnhap.html" class="nav-link text-left">Log in</a></li>
+                                <li>
+                                    <a href="dangky.html" class="nav-link text-left">Log out</a>
+                                </li>
+                            </ul>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container text-center form-background">
+            <h3 class="tieude">NỘI DUNG BÀI ĐĂNG</h3>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <form name="upForm" method="POST" enctype="multipart/form-data">
+					
+                        <div class="form-group">
+                            <div class="col-xs-4 col-sm-12 col-md-12 form-item">
+                                
+                            </div>
+							<div class="col-xs-4 col-sm-12 col-md-12 form-item">
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Tiêu đề " />
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-12 form-item">
+                                <textarea id="content" rows="6px" cols="52px" placeholder="Nội dung"></textarea>
+                                <script>
+                                    CKEDITOR.replace('content');
+                                </script>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-12 form-item">
+                                <div class="form-control">Ảnh:</div>
+                                <input type="file" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
+                                <p class="text-danger"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-12 form-item">
+                                <!-- Show message-box-->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-12 form-item">
+                                <input onclick="submitForm()" type="button" name="submit" class="btn-up" value="Đăng bài" />
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4"></div>
+    </section>
+
+
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+</body>
+
 </html>

@@ -4,7 +4,7 @@ import { middleware as body } from 'bodymen'
 import { create, index, show, update, destroy } from './controller'
 import { schema } from './model'
 import { token } from '../../services/passport';
-export Component, { schema } from './model'
+export Component, { schema } from './model';
 
 const router = new Router()
 const { title, description, images } = schema.tree
