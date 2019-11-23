@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/animate.css">
 
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="dangbai.js"></script>
 
 </head>
 
@@ -68,18 +69,18 @@
         </div>
 
     </div>
-    <div class="FormRegister" id="content">
+    <div class="FormRegister">
         <form action="" class="dangbai">
             <h1 class="titlebaidang">NỘI DUNG BÀI ĐĂNG</h1>
 				<div class="tieude" >
 				<label style="color:white">Tiêu đề:</label></br>
-				<input class="inputtieude" type="text" />
+				<input class="inputtieude" id="title" type="text" />
 				</div>
 				<div class="noidung">
 					<label style="color:white">Nội dung:</label>
-					<textarea id="nd" rows="1" cols="1">
+					<textarea id="content" rows="1" cols="1">
 					</textarea>
-					<script>CKEDITOR.replace('nd');</script>
+					<script>CKEDITOR.replace('content');</script>
 				</div>
 				<div class="anh">
 				<label style="color:white">Ảnh:</label></br>
@@ -87,7 +88,7 @@
 					<input type="file" style="color:white" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
 				</div>
                 <div>
-                    <button class="buttondb" type="submit" align="center" onclick="submitForm()">ĐĂNG BÀI </button>
+                    <button class="buttondb" type="button" align="center" onclick="submitForm()">ĐĂNG BÀI </button>
                 </div>
 
             
