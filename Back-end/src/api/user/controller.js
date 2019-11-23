@@ -28,11 +28,9 @@ export const showMe = ({ user }, res) =>
 
 export const create = ({ bodymen: { body } }, res, next) =>
   User.create(body)
-    .then(user => {
-      sign(user.id)
-        .then((token) => ({ token, user: user.view(true) }))
-        .then(success(res, 201))
-    })
+    .then((token) => ({ token, user: user.view(true) }))
+    .then(success(res, 201))
+
     .catch((err) => {
       /* istanbul ignore else */
       if (err.name === 'MongoError' && err.code === 11000) {
