@@ -3,7 +3,7 @@ import { Image } from '.'
 
 export const create = ({ files }, res, next) =>
   Image.create(files)
-    .then((image) => image.view(true))
+    .then((images) => images.map(image => image.view(true)))
     .then(success(res, 201))
     .catch(next)
 
