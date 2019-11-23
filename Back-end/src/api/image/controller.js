@@ -1,8 +1,8 @@
 import { success, notFound } from '../../services/response/'
 import { Image } from '.'
 
-export const create = ({ file }, res, next) =>
-  Image.create(file)
+export const create = ({ files }, res, next) =>
+  Image.create(files)
     .then((image) => image.view(true))
     .then(success(res, 201))
     .catch(next)
