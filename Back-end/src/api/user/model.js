@@ -39,8 +39,8 @@ const userSchema = new Schema({
     default: false
   }
 }, {
-  timestamps: true
-})
+    timestamps: true
+  })
 
 userSchema.path('email').set(function (email) {
 
@@ -64,12 +64,12 @@ userSchema.pre('save', function (next) {
 })
 
 userSchema.methods = {
-  view (full) {
+  view(full) {
     let view = {}
     let fields = ['id', 'name', 'picture']
 
     if (full) {
-      fields = [...fields, 'email', 'createdAt']
+      fields = [...fields, 'email', 'createdAt', 'role', 'picture', 'blocked']
     }
 
     fields.forEach((field) => { view[field] = this[field] })
@@ -77,7 +77,7 @@ userSchema.methods = {
     return view
   },
 
-  authenticate (password) {
+  authenticate(password) {
     return bcrypt.compare(password, this.password).then((valid) => valid ? this : false)
   }
 }

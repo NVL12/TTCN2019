@@ -36,7 +36,7 @@ const { originalname, encoding, mimetype, destination, filename, path, size } = 
 router.post('/',
   token({ required: true }),
   body({ originalname, encoding, mimetype, destination, filename, path, size }),
-  upload.single('file'),
+  upload.array('files'),
   create)
 
 /**

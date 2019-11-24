@@ -35,7 +35,7 @@ Then, run the server in development mode.
 
 ```bash
 $ npm run dev
-Express server listening on http://0.0.0.0:9000, in development mode
+Express server listening on http://127.0.0.1:9000, in development mode
 ```
 
 If you choose to generate the authentication API, you can start to play with it.
@@ -43,7 +43,7 @@ If you choose to generate the authentication API, you can start to play with it.
 
 Create a user (sign up):
 ```bash
-curl -X POST http://0.0.0.0:9000/users -i -d "email=test@example.com&password=123456&access_token=MASTER_KEY_HERE"
+curl -X POST http://127.0.0.1:9000/api/api/users -i -d "email=test@example.com&password=123456&access_token=MASTER_KEY_HERE"
 ```
 
 It will return something like:
@@ -61,7 +61,7 @@ HTTP/1.1 201 Created
 
 Authenticate the user (sign in):
 ```bash
-curl -X POST http://0.0.0.0:9000/auth -i -u test@example.com:123456 -d "access_token=MASTER_KEY_HERE"
+curl -X POST http://127.0.0.1:9000/api/auth -i -u test@example.com:123456 -d "access_token=MASTER_KEY_HERE"
 ```
 
 It will return something like:
@@ -82,7 +82,7 @@ HTTP/1.1 201 Created
 
 Now you can use the `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9` token (it's usually greater than this) to call user protected APIs. For example, you can create a new `article` API using `yo rest:api` and make the `POST /articles` endpoint only accessible to authenticated users. Then, to create a new article you must pass the `access_token` parameter.
 ```bash
-curl -X POST http://0.0.0.0:9000/articles -i -d "title=Awesome Article&content=Yeah Baby&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+curl -X POST http://127.0.0.1:9000/api/articles -i -d "title=Awesome Article&content=Yeah Baby&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
 ```
 
 It will return something like:
