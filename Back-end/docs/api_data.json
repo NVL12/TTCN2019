@@ -868,6 +868,420 @@
   },
   {
     "type": "post",
+    "url": "/ratings",
+    "title": "Create rating",
+    "name": "CreateRating",
+    "group": "Rating",
+    "permission": [
+      {
+        "name": "user",
+        "title": "User access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>user access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "related_object",
+            "description": "<p>Rating's related_object.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "kind",
+            "description": "<p>Rating's kind.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Rating's description.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "rate",
+            "description": "<p>Rating's rate.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "rating",
+            "description": "<p>Rating's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Rating not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>user access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/rating/index.js",
+    "groupTitle": "Rating"
+  },
+  {
+    "type": "delete",
+    "url": "/ratings/:id",
+    "title": "Delete rating",
+    "name": "DeleteRating",
+    "group": "Rating",
+    "permission": [
+      {
+        "name": "admin",
+        "title": "Admin access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>admin access token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 204": [
+          {
+            "group": "Success 204",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Rating not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>user access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/rating/index.js",
+    "groupTitle": "Rating"
+  },
+  {
+    "type": "get",
+    "url": "/ratings/:id",
+    "title": "Retrieve rating",
+    "name": "RetrieveRating",
+    "group": "Rating",
+    "permission": [
+      {
+        "name": "user",
+        "title": "User access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>user access token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "rating",
+            "description": "<p>Rating's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Rating not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>user access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/rating/index.js",
+    "groupTitle": "Rating"
+  },
+  {
+    "type": "get",
+    "url": "/ratings",
+    "title": "Retrieve ratings",
+    "name": "RetrieveRatings",
+    "group": "Rating",
+    "permission": [
+      {
+        "name": "user",
+        "title": "User access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>user access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>Query to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1..30",
+            "optional": true,
+            "field": "page",
+            "defaultValue": "1",
+            "description": "<p>Page number.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "size": "1..100",
+            "optional": true,
+            "field": "limit",
+            "defaultValue": "30",
+            "description": "<p>Amount of returned items.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "sort",
+            "defaultValue": "-createdAt",
+            "description": "<p>Order of returned items.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String[]",
+            "optional": true,
+            "field": "fields",
+            "description": "<p>Fields to be returned.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "ratings",
+            "description": "<p>List of ratings.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>user access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/rating/index.js",
+    "groupTitle": "Rating"
+  },
+  {
+    "type": "put",
+    "url": "/ratings/:id",
+    "title": "Update rating",
+    "name": "UpdateRating",
+    "group": "Rating",
+    "permission": [
+      {
+        "name": "user",
+        "title": "User access only",
+        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>user access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "related_object",
+            "description": "<p>Rating's related_object.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "kind",
+            "description": "<p>Rating's kind.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Rating's description.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "rate",
+            "description": "<p>Rating's rate.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "rating",
+            "description": "<p>Rating's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Rating not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>user access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/rating/index.js",
+    "groupTitle": "Rating"
+  },
+  {
+    "type": "post",
     "url": "/users",
     "title": "Create user",
     "name": "CreateUser",
