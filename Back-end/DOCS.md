@@ -19,6 +19,13 @@
 	- [Retrieve images](#retrieve-images)
 	- [Update image](#update-image)
 	
+- [Rating](#rating)
+	- [Create rating](#create-rating)
+	- [Delete rating](#delete-rating)
+	- [Retrieve rating](#retrieve-rating)
+	- [Retrieve ratings](#retrieve-ratings)
+	- [Update rating](#update-rating)
+	
 - [User](#user)
 	- [Create user](#create-user)
 	- [Delete user](#delete-user)
@@ -490,6 +497,86 @@ response is something like this:
     "updatedAt": "2019-11-15T16:10:06.659Z"
 }
 ```
+# Rating
+
+## Create rating
+
+
+
+	POST /ratings
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| related_object			| 			|  <p>Rating's related_object.</p>							|
+| kind			| 			|  <p>Rating's kind.</p>							|
+| description			| 			|  <p>Rating's description.</p>							|
+| rate			| 			|  <p>Rating's rate.</p>							|
+
+## Delete rating
+
+
+
+	DELETE /ratings/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve rating
+
+
+
+	GET /ratings/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+
+## Retrieve ratings
+
+
+
+	GET /ratings
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update rating
+
+
+
+	PUT /ratings/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| related_object			| 			|  <p>Rating's related_object.</p>							|
+| kind			| 			|  <p>Rating's kind.</p>							|
+| description			| 			|  <p>Rating's description.</p>							|
+| rate			| 			|  <p>Rating's rate.</p>							|
+
 # User
 
 ## Create user

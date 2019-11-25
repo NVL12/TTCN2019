@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b79a790-7928-4c5c-a1fd-f91cdd5187e6" name="Default Changelist" comment="fetch api for view detail">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/post-detail/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/post-detail/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/post-detail/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/post-detail/detail.js" afterDir="false" />
-    </list>
+    <list default="true" id="6b79a790-7928-4c5c-a1fd-f91cdd5187e6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -207,7 +202,7 @@
       <workItem from="1574470244575" duration="14147000" />
       <workItem from="1574486847452" duration="7957000" />
       <workItem from="1574508333726" duration="6856000" />
-      <workItem from="1574564284736" duration="8340000" />
+      <workItem from="1574564284736" duration="9047000" />
     </task>
     <task id="LOCAL-00001" summary="config ckeditor">
       <created>1573830085801</created>
@@ -237,15 +232,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574494790896</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="detail page: fix slide images">
+      <created>1574573974892</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574573974892</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55935000" />
+    <option name="totallyTimeSpent" value="56642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -326,7 +327,8 @@
     <MESSAGE value="post: fetch api" />
     <MESSAGE value="fetch api for 'dang bai'" />
     <MESSAGE value="fetch api for view detail" />
-    <option name="LAST_COMMIT_MESSAGE" value="fetch api for view detail" />
+    <MESSAGE value="detail page: fix slide images" />
+    <option name="LAST_COMMIT_MESSAGE" value="detail page: fix slide images" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FontEnd/index.html" />

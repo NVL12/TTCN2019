@@ -3,6 +3,7 @@ import user from './user'
 import auth from './auth'
 import component from './component'
 import image from './image'
+import rating from './rating'
 
 const router = new Router()
 
@@ -33,5 +34,6 @@ router.use('/users', user)
 router.use('/auth', auth)
 router.use('/components', component)
 router.use('/images', image)
+router.use('/ratings', rating)
 
 export default router
