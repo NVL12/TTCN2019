@@ -56,6 +56,10 @@
       left: 11rem;
     }
 
+    .modal-dialog {
+      max-width: 100rem !important;
+    }
+
     #phantrang {
       position: absolute;
       bottom: 0;
@@ -74,8 +78,6 @@
           <div style="text-align: center;"><i class="fa fa-user-circle-o text-white" style=" font-size: 3rem;"
               aria-hidden="true"></i></div>
         </p>
-        <a class="nav-link text-white active show" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
-          role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
         <a class="nav-link text-white" id="v-pills-accounts-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
           aria-controls="v-pills-profile" aria-selected="false">Accounts</a>
         <a class="nav-link text-white" id="v-pills-posts-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
@@ -84,9 +86,6 @@
     </div>
     <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <h4>Welcome admin page</h4>
-        </div>
         <!-- Manage account -->
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -108,7 +107,7 @@
         <!-- Manage post -->
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
           <div class="container-fluid">
-            <h3 class="my-1">Manage post</h3>
+            <h3 class="my-1 mb-2">Manage post</h3>
             <ul style="list-style-type:none" id="list-place">
               
             </ul>  
@@ -120,6 +119,45 @@
           </div>
           
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal" id="editModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update place</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="form-group d-inline-block" id="listImages">
+
+            </div>
+            <input type="hidden" class="form-control" id="idItem">
+            <div class="form-group">
+              <label for="titleItem">Title</label>
+              <input type="text" class="form-control" id="titleItem">
+            </div>
+            <div class="form-group">
+              <label for="desciptionItem">Desciption</label>
+              <textarea class="form-control" id="desciptionItem" rows="15"></textarea>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" id="updateOk">Ok</button>
+        </div>
+        
       </div>
     </div>
   </div>
