@@ -12,7 +12,6 @@ $("#v-pills-accounts-tab").click(function(){
       url: usersUrl,  
       dataType: 'json',  
       success: function (data) {  
-         console.log(data.results[6].name);
          let listData = [];
          let i = 0;
          $.each(data.results, function(){

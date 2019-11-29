@@ -1,4 +1,5 @@
 const comUrl = "http://127.0.0.1:9000/api/components";
+const imgUrl = "http://127.0.0.1:9000/api/images";
 
 $("#v-pills-posts-tab").click(function(){
    $("#list-place").empty();
@@ -14,11 +15,11 @@ $("#v-pills-posts-tab").click(function(){
          let listData = [];
          let i = 0;
          $.each(data.results, function(){
-            listData[i] = `<li class="position: ">
-               <img src="../Back-end/` + data.results[i].images[0].path + `" class="card-img-top" alt="...">
-               <h5>` + data.results[i].title + `</h5>
-               <p>` + shortingDescription(data.results[i].description) + `</p>
-               <div id="post-data">
+            listData[i] = `<li class="position: ">`
+               + `<img src="` + (typeof(data.results[i].images[0]) == "undefined" ? "anh.jpg" : `../Back-end/` + data.results[i].images[0].path)  + `" class="card-img-top" alt="...">`                
+               + `<h5>` + data.results[i].title + `</h5>`
+               + (typeof(data.results[i].description) == "undefined" ? "" : `<p>` + shortingDescription(data.results[i].description) + `</p>`)
+               + ` <div id="post-data">
                   <button class="btn btn-primary btn-crud" data-toggle="modal" data-target="#editModal" data-place-id="` + data.results[i].id + `">Edit</button>
                   <button class="btn btn-danger btn-crud" onclick="deleteItem('` + data.results[i].id + `')">Remove</button>            
                </div>
@@ -45,13 +46,16 @@ $("#editModal").on('shown.bs.modal', function(e){
       url: comUrl + '/' + placeId,  
       dataType: 'json',  
       success: function (data) {  
-         console.log(data); 
+         console.log(data);    
          $("#listImages").empty();
          let i = 0;
+         let listImagesId = "";
          $.each(data.images, function(){
-            $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top" alt="...">`);
+            listImagesId += "" + data.images[i].id + ",";
+            $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top"  alt="...">`);
             i++;
          });
+         $("#idImages").val(listImagesId); 
          $("#idItem").val(placeId); 
          $("#titleItem").val(data.title); 
          $("#desciptionItem") .val(data.description);   
@@ -75,57 +79,65 @@ function deleteItem(id){
 }
 
 $("#updateOk").click(function(){
+   let imgs = $("#idImages").val().substring(0, $("#idImages").val().length - 1).split(",");
+   let putData = {
+      title: $("#titleItem").val(),
+      description: $("#desciptionItem").val(),
+      images: imgs
+   }
+   console.log(JSON.stringify(putData));
+
    $.ajax({ 
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
       }, 
-      type: 'GET',  
-      url: comUrl + '/' + $("#idItem").val(), 
-      dataType: 'json',  
+      type: 'put',  
+      url: comUrl + '/' + $("#idItem").val(), //http://127.0.0.1:9000/api/components/{id}}
+      contentType: 'application/json',
+      data: JSON.stringify(putData), 
       success: function () {  
          console.log("ok");
       }  
    }); 
 });
 
+function uploadImage(input) {
 
-// if(data.length < 6){
-//    $("#pageList").empty();
-//    for(let i = 0; i < data.length; i++){
-//       $("#listPlace").append(listData[i]);
-//    }
-//    return false;
-// }
-// console.log(listData[0]);
-// $("#page" + 1).click(function(){
-//    $("#listPlace").empty();
-//    for(let i = 0; i < 5; i++){
-//       $("#listPlace").append(listData[i]);
-//    }
-// });    
+    const headers = new Headers({
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZDg4ODJhZWUwNjJhMmQ4MDVhYzZjOCIsImlhdCI6MTU3NDQ3MTg2M30.flG8_lVAXy5D-Nt13nkB8_YS1PvehzhEY0YzSJ_5ZNI'
+    });
+    let imagesReceived = [];
+    let imageFiles;
+    if (document.getElementById('image') && document.getElementById('image').files) {
+        imageFiles = document.getElementById('image').files;
+    }
+    console.log(imageFiles);
+    let form_data = new FormData();
+    for (const image of imageFiles) {
+        console.log(image);
+        form_data.append('files', image);
+    }
 
-// $("#page2").click(function(){
-//    $("#listPlace").empty();
-//    for(let i = 5; i < 10; i++){
-//       $("#listPlace").append(listData[i]);
-//    }
-// });   
-
-// $("#page3").click(function(){
-//    $("#listPlace").empty();
-//    for(let i = 10; i < 15; i++){
-//       $("#listPlace").append(listData[i]);
-//    }
-// });
-
-// $("#page4").click(function(){
-//    $("#listPlace").empty();
-//    for(let i = 15; i < 20; i++){
-//       $("#listPlace").append(listData[i]);
-//    }
-// });   
-// if(i % ItemPerPage == 0){
-//    let pageNum = `<button class="btn btn-primary" id="page` + p + `"><li>` + (p++) + `</li></button>`;
-//    $("#pageList").append(pageNum);
-// }
+    fetch('http://localhost:9000/api/images', {
+        method: 'POST',
+        headers: headers,
+        body: form_data
+    })
+    .then(response => {
+        console.log('@ ', response);
+        return response.json()
+    })
+    .then(data => {
+        console.log(data); // Prints result from `response.json()` in getRequest
+        imagesReceived = data;
+        let temp = [];
+        imagesReceived.forEach((item) => {
+            temp.push(item.id + ',');
+            $("#listImages").append(`<img src="../Back-end/` + item.path + `" class="card-img-top"  alt="...">`);
+        });
+        imagesUploaded = temp;
+        $("#idImages").val($("#idImages").val() + temp);
+    })
+    .catch(error => console.error(error));
+}

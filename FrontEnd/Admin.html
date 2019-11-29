@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
   <style>
     .nav-link.active.show {
       background: #34c3eb;
@@ -34,6 +35,7 @@
     }
 
     .card-img-top {
+      position: relative;
       height: 8rem; 
       width: 10rem; 
       float:left; 
@@ -65,6 +67,7 @@
       bottom: 0;
       right: 0;
     }
+
   </style>
 
 </head>
@@ -140,6 +143,12 @@
             <div class="form-group d-inline-block" id="listImages">
 
             </div>
+            <input type="hidden" class="form-control" id="idImages">
+            <div class="form-group">
+            <label style="color:white">Ảnh:</label></br>
+              <input class="inputanh" type="text" />
+              <input type="file" style="color:white" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
+            </div>
             <input type="hidden" class="form-control" id="idItem">
             <div class="form-group">
               <label for="titleItem">Title</label>
@@ -147,7 +156,7 @@
             </div>
             <div class="form-group">
               <label for="desciptionItem">Desciption</label>
-              <textarea class="form-control" id="desciptionItem" rows="15"></textarea>
+              <textarea class="form-control" id="desciptionItem" rows="10"></textarea>
             </div>
           </form>
         </div>
