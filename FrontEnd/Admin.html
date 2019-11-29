@@ -110,7 +110,7 @@
         <!-- Manage post -->
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
           <div class="container-fluid">
-            <h3 class="my-1 mb-2">Manage post</h3>
+            <button class="btn btn-primary my-3" id="createPost" data-toggle="modal" data-target="#editModal" data-place-id="Create">Create new post</button>
             <ul style="list-style-type:none" id="list-place">
               
             </ul>  
@@ -133,13 +133,14 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Update place</h4>
+          <h4 class="modal-title" id="modalTitle">Update place</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
           <form>
+            <input type="hidden" class="form-control" id="flag">
             <div class="form-group d-inline-block" id="listImages">
 
             </div>

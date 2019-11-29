@@ -1,7 +1,9 @@
 const comUrl = "http://127.0.0.1:9000/api/components";
 const imgUrl = "http://127.0.0.1:9000/api/images";
 
-$("#v-pills-posts-tab").click(function(){
+$("#v-pills-posts-tab").click(createListComponent);
+
+function createListComponent(){
    $("#list-place").empty();
    $.ajax({ 
       headers: {
@@ -15,7 +17,7 @@ $("#v-pills-posts-tab").click(function(){
          let listData = [];
          let i = 0;
          $.each(data.results, function(){
-            listData[i] = `<li class="position: ">`
+            listData[i] = `<li class="">`
                + `<img src="` + (typeof(data.results[i].images[0]) == "undefined" ? "anh.jpg" : `../Back-end/` + data.results[i].images[0].path)  + `" class="card-img-top" alt="...">`                
                + `<h5>` + data.results[i].title + `</h5>`
                + (typeof(data.results[i].description) == "undefined" ? "" : `<p>` + shortingDescription(data.results[i].description) + `</p>`)
@@ -29,7 +31,7 @@ $("#v-pills-posts-tab").click(function(){
          })           
       }  
    }); 
-});
+}
 
 function shortingDescription(text){
    return (text.length > 100) ? text.substring(11, 200) + "..." : text;
@@ -37,31 +39,82 @@ function shortingDescription(text){
 
 $("#editModal").on('shown.bs.modal', function(e){
    let placeId = $(e.relatedTarget).data('place-id');
+   if(placeId != "Create"){
+      $("#modalTitle").text("Update post");
+      $("#flag").val("put");
+      $("#listImages").empty();
+      $.ajax({ 
+         headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+         }, 
+         type: 'GET',  
+         url: comUrl + '/' + placeId,  
+         dataType: 'json',  
+         success: function (data) {  
+            let i = 0;
+            let listImagesId = "";
+            $.each(data.images, function(){
+               listImagesId += "" + data.images[i].id + ",";
+               $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top"  alt="...">
+               <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + (1 + i * 11) + `rem" onclick="deleteImage(\'` + data.images[i].id + `\');">x</a>`);
+               i++;
+            });
+            $("#idImages").val(listImagesId); 
+            $("#idItem").val(placeId); 
+            $("#titleItem").val(data.title); 
+            $("#desciptionItem") .val(data.description);   
+         }  
+      }); 
+   }else{
+      $("#modalTitle").text("Create post");
+      $("#listImages").empty();
+      $("#idImages").val(""); 
+      $("#idItem").val(""); 
+      $("#titleItem").val(""); 
+      $("#desciptionItem") .val(""); 
+      $("#flag").val("post");
+   }
+});
+
+function deleteImage(id){   
+   $.ajax({ 
+      headers: {
+         'Content-Type': 'application/json',
+         'Authorization': 'Bearer ' + token
+      }, 
+      type: 'DELETE',  
+      url: imgUrl + '/' + id,  
+      dataType: 'json',  
+      success: function () {
+         reloadImages();
+         $("#idImages").val($("#idImages").val().replace(id + ',', ''));
+      }  
+   });
+}
+
+function reloadImages(){
+   $("#listImages").empty();
    $.ajax({ 
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
       }, 
       type: 'GET',  
-      url: comUrl + '/' + placeId,  
+      url: comUrl + '/' + $("#idItem").val(),  
       dataType: 'json',  
       success: function (data) {  
-         console.log(data);    
-         $("#listImages").empty();
          let i = 0;
          let listImagesId = "";
          $.each(data.images, function(){
             listImagesId += "" + data.images[i].id + ",";
-            $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top"  alt="...">`);
+            $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top"  alt="...">
+            <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + (1 + i * 11) + `rem" onclick="deleteImage(\'` + data.images[i].id + `\');">x</a>`);
             i++;
          });
-         $("#idImages").val(listImagesId); 
-         $("#idItem").val(placeId); 
-         $("#titleItem").val(data.title); 
-         $("#desciptionItem") .val(data.description);   
       }  
    }); 
-});
+}
 
 function deleteItem(id){
    $.ajax({ 
@@ -69,7 +122,7 @@ function deleteItem(id){
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
       }, 
-      type: 'GET',  
+      type: 'DELETE',  
       url: comUrl + '/' + id,  
       dataType: 'json',  
       success: function () {  
@@ -83,21 +136,20 @@ $("#updateOk").click(function(){
    let putData = {
       title: $("#titleItem").val(),
       description: $("#desciptionItem").val(),
-      images: imgs
+      images: (imgs == "" ? [] : imgs)
    }
-   console.log(JSON.stringify(putData));
 
    $.ajax({ 
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
-      }, 
-      type: 'put',  
-      url: comUrl + '/' + $("#idItem").val(), //http://127.0.0.1:9000/api/components/{id}}
+      },  
+      type: $("#flag").val(),  
+      url: comUrl + ($("#flag").val() == "put" ? '/' + $("#idItem").val() : ''),
       contentType: 'application/json',
       data: JSON.stringify(putData), 
       success: function () {  
-         console.log("ok");
+         createListComponent();
       }  
    }); 
 });
@@ -115,7 +167,6 @@ function uploadImage(input) {
     console.log(imageFiles);
     let form_data = new FormData();
     for (const image of imageFiles) {
-        console.log(image);
         form_data.append('files', image);
     }
 
