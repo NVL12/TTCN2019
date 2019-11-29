@@ -1,7 +1,11 @@
 const comUrl = "http://127.0.0.1:9000/api/components";
 const imgUrl = "http://127.0.0.1:9000/api/images";
+var imagesUploaded = [];
+var imagesOnForm = [];
 
-$("#v-pills-posts-tab").click(function(){
+$("#v-pills-posts-tab").click(createListComponent);
+
+function createListComponent(){
    $("#list-place").empty();
    $.ajax({ 
       headers: {
@@ -15,7 +19,7 @@ $("#v-pills-posts-tab").click(function(){
          let listData = [];
          let i = 0;
          $.each(data.results, function(){
-            listData[i] = `<li class="position: ">`
+            listData[i] = `<li class="">`
                + `<img src="` + (typeof(data.results[i].images[0]) == "undefined" ? "anh.jpg" : `../Back-end/` + data.results[i].images[0].path)  + `" class="card-img-top" alt="...">`                
                + `<h5>` + data.results[i].title + `</h5>`
                + (typeof(data.results[i].description) == "undefined" ? "" : `<p>` + shortingDescription(data.results[i].description) + `</p>`)
@@ -26,42 +30,90 @@ $("#v-pills-posts-tab").click(function(){
             </li>`;
             $("#list-place").append(listData[i]);        
             i++;
-         })           
+         })         
       }  
    }); 
-});
+}
 
 function shortingDescription(text){
    return (text.length > 100) ? text.substring(11, 200) + "..." : text;
 }
 
 $("#editModal").on('shown.bs.modal', function(e){
+   imagesOnForm = [];
+   imagesUploaded = [];
    let placeId = $(e.relatedTarget).data('place-id');
+   if(placeId != "Create"){
+      $("#modalTitle").text("Update post");
+      $("#flag").val("put");
+      $("#listImages").empty();
+      $.ajax({ 
+         headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+         }, 
+         type: 'GET',  
+         url: comUrl + '/' + placeId,  
+         dataType: 'json',  
+         success: function (data) {  
+            let i = 0;
+            let listImagesId = "";
+            $.each(data.images, function(){
+               $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top"  alt="...">
+               <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + (1 + i * 11) + `rem" onclick="deleteImage(\'` + data.images[i].id + `\');">x</a>`);
+               imagesOnForm.push(data.images[i].id);
+               i++;
+            });
+            $("#idItem").val(placeId); 
+            $("#titleItem").val(data.title); 
+            $("#desciptionItem") .val(data.description);   
+         }  
+      }); 
+   }else{
+      $("#modalTitle").text("Create post");
+      $("#listImages").empty();
+      $("#idItem").val(""); 
+      $("#titleItem").val(""); 
+      $("#desciptionItem") .val(""); 
+      $("#flag").val("post");
+   }
+});
+
+function deleteImage(id){
    $.ajax({ 
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
       }, 
-      type: 'GET',  
-      url: comUrl + '/' + placeId,  
+      type: 'DELETE',  
+      url: imgUrl + '/' + id,  
       dataType: 'json',  
-      success: function (data) {  
-         console.log(data);    
-         $("#listImages").empty();
-         let i = 0;
-         let listImagesId = "";
-         $.each(data.images, function(){
-            listImagesId += "" + data.images[i].id + ",";
-            $("#listImages").append(`<img src="../Back-end/` + data.images[i].path + `" class="card-img-top"  alt="...">`);
-            i++;
-         });
-         $("#idImages").val(listImagesId); 
-         $("#idItem").val(placeId); 
-         $("#titleItem").val(data.title); 
-         $("#desciptionItem") .val(data.description);   
+      success: function () {
+         if(imagesOnForm.includes(id)) imagesOnForm.splice( $.inArray(id, imagesOnForm), 1 );
+         imagesUploaded.splice( $.inArray(id, imagesUploaded), 1 );
+         reloadImages();
       }  
-   }); 
-});
+   });
+}
+
+function reloadImages(){
+   $("#listImages").empty();
+   for(let i = 0; i < imagesOnForm.length; i++){ 
+      $.ajax({ 
+         headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+         }, 
+         type: 'GET',  
+         url: imgUrl + '/' + imagesOnForm[i],  
+         dataType: 'json',  
+         success: function (data) {  
+            $("#listImages").append(`<img src="../Back-end/` + data.path + `" class="card-img-top"  alt="...">
+            <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + (1 + i * 11) + `rem" onclick="deleteImage(\'` + data.id + `\');">x</a>`);      
+         }  
+      }); 
+   }  
+}
 
 function deleteItem(id){
    $.ajax({ 
@@ -69,7 +121,7 @@ function deleteItem(id){
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
       }, 
-      type: 'GET',  
+      type: 'DELETE',  
       url: comUrl + '/' + id,  
       dataType: 'json',  
       success: function () {  
@@ -79,27 +131,30 @@ function deleteItem(id){
 }
 
 $("#updateOk").click(function(){
-   let imgs = $("#idImages").val().substring(0, $("#idImages").val().length - 1).split(",");
    let putData = {
       title: $("#titleItem").val(),
       description: $("#desciptionItem").val(),
-      images: imgs
+      images: (imagesOnForm == "" ? [] : imagesOnForm)
    }
-   console.log(JSON.stringify(putData));
 
    $.ajax({ 
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
-      }, 
-      type: 'put',  
-      url: comUrl + '/' + $("#idItem").val(), //http://127.0.0.1:9000/api/components/{id}}
+      },  
+      type: $("#flag").val(),  
+      url: comUrl + ($("#flag").val() == "put" ? '/' + $("#idItem").val() : ''),
       contentType: 'application/json',
       data: JSON.stringify(putData), 
       success: function () {  
-         console.log("ok");
+         createListComponent();
       }  
    }); 
+});
+
+$("#cancelBtn").click(function(){
+   if(imagesUploaded.length == 0) return;
+   imagesUploaded.forEach(id => deleteImage(id));
 });
 
 function uploadImage(input) {
@@ -115,7 +170,6 @@ function uploadImage(input) {
     console.log(imageFiles);
     let form_data = new FormData();
     for (const image of imageFiles) {
-        console.log(image);
         form_data.append('files', image);
     }
 
@@ -131,13 +185,12 @@ function uploadImage(input) {
     .then(data => {
         console.log(data); // Prints result from `response.json()` in getRequest
         imagesReceived = data;
-        let temp = [];
         imagesReceived.forEach((item) => {
-            temp.push(item.id + ',');
-            $("#listImages").append(`<img src="../Back-end/` + item.path + `" class="card-img-top"  alt="...">`);
+            imagesUploaded.push(item.id);
+            imagesOnForm.push(item.id);
+            $("#listImages").append(`<img src="../Back-end/` + item.path + `" class="card-img-top"  alt="...">
+            <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + ((imagesOnForm.length - 1) * 11 + 1) + `rem" onclick="deleteImage(\'` + item.id + `\');">x</a>`);
         });
-        imagesUploaded = temp;
-        $("#idImages").val($("#idImages").val() + temp);
     })
     .catch(error => console.error(error));
 }
