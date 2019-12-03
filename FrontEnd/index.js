@@ -3,15 +3,12 @@ function navigateToDetail(id) {
     window.location.href = 'post-detail/detail.html';
 }
  function onLoadIndex() {
-<<<<<<< HEAD
-=======
     const token = localStorage.getItem('token');
     if (!token) $('#dang-xuat-btn').hide();
     else {
         $('#dang-nhap-btn').hide();
         $('#dang-ky-btn').hide();
     }
->>>>>>> e98eb3d59db01a3fb789a6ef0c16db4340ac5ef1
     const headers = new Headers({
         'Content-Type': 'application/json',
         'Authorization': token
