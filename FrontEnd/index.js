@@ -3,7 +3,6 @@ function navigateToDetail(id) {
     window.location.href = 'post-detail/detail.html';
 }
  function onLoadIndex() {
-
     const headers = new Headers({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZDg4ODJhZWUwNjJhMmQ4MDVhYzZjOCIsImlhdCI6MTU3NDQ3MTg2M30.flG8_lVAXy5D-Nt13nkB8_YS1PvehzhEY0YzSJ_5ZNI'
