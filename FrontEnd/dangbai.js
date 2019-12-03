@@ -2,6 +2,12 @@
 exports.__esModule = true;
 var CKEDITOR = require("ckeditor/ckeditor.js");
 
+function onLoad() {
+    if(!localStorage.getItem('token')) {
+        window.location.href = 'dangnhap.html';
+    }
+}
+
 function PostDetailModel(title, content, images) {
     this.title = title;
     this.description = content;
