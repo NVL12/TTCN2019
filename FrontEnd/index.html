@@ -21,7 +21,7 @@
 
 	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
-	
+
 	<link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" href="css/style.css">
@@ -44,13 +44,16 @@
 								<a href="index.html" class="nav-link text-left">Trang chủ</a>
 							</li>
 							<li>
-								<a  id="login-logout"  href="dangnhap.html" class="nav-link text-left">Đăng nhập</a>
+								<a href="dangbai.html" class="nav-link text-left">Đăng bài</a>
 							</li>
-							<li>
+							<li id="dang-ky-btn">
 								<a href="dangky.html" class="nav-link text-left">Đăng kí</a>
 							</li>
-							<li>
-								<a href="dangbai.html" class="nav-link text-left">Đăng bài</a>
+							<li id="dang-nhap-btn">
+								<a href="dangnhap.html" class="nav-link text-left">Đăng nhập</a>
+							</li>
+							<li id="dang-xuat-btn">
+								<a href="dangnhap.html" class="nav-link text-left" onclick="removeToken()">Đăng xuất</a>
 							</li>
 						</ul>
 						</ul>
@@ -78,7 +81,7 @@
 					</div>
 				</div>
 				<div class="row" id="news-feed"></div>
-					
+
 			</div>
 		</div>
 
@@ -106,7 +109,8 @@
 			</svg>
 		</div>
 
-		<script src="index.js"></script>
+        <script src="index.js"></script>
+        <script src="logout.js"></script>
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/jquery-migrate-3.0.1.min.js"></script>
 		<script src="js/jquery-ui.js"></script>
