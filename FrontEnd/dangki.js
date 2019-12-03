@@ -17,8 +17,6 @@ const register=()=>{
   .then(result => result.json())
   .then(user => {
     console.log(user);
-    //alert(user)
-    //localStorage.setItem('token', user.token);
    window.location.replace('dangnhap.html');
   })
   .catch(err => {
