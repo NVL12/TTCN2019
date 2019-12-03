@@ -1,7 +1,18 @@
 async function onLoad() {
     let id = sessionStorage.getItem('id');
     // let id = '5dd8d5b86976b622487619e0';
-    let token = localStorage.getItem('token')
+    let token = localStorage.getItem('token');
+    let loginLogout = document.getElementById('login-logout');
+    if (!token) {
+        loginLogout.setAttribute('href', '../dangnhap.html');
+        loginLogout.innerText = 'Đăng nhập';
+    } else {
+        loginLogout.innerText = 'Đăng xuất';
+        const a = document.createElement('a');
+        a.setAttribute('href', '../dangbai.html');
+        a.innerText = 'Đăng bài';
+        document.getElementById('post').appendChild(a);
+    }
     const headers = new Headers({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
