@@ -9,10 +9,12 @@ function PostDetailModel(title, content, images) {
 }
 var imagesUploaded = [];
 function submitForm() {
+    let token = localStorage.getItem('token')
     const headers = new Headers({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZDg4ODJhZWUwNjJhMmQ4MDVhYzZjOCIsImlhdCI6MTU3NDQ3MTg2M30.flG8_lVAXy5D-Nt13nkB8_YS1PvehzhEY0YzSJ_5ZNI'
+        'Authorization': 'Bearer ' + token
     });
+
     let postDetail = new PostDetailModel(
         document.getElementById('title').value,
         CKEDITOR.instances.content.getData(),
@@ -28,6 +30,8 @@ function submitForm() {
     .then(response => response.json())
     .then(data => {
         console.log(data) // Prints result from `response.json()` in getRequest
+        sessionStorage.setItem('id', data.id)
+        window.location.href = './post-detail/detail.html';
     })
     .catch(error => console.error(error));
 }
