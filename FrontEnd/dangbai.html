@@ -53,7 +53,7 @@
                                 <a href="index.html" class="nav-link text-left">Trang chủ</a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link text-left">Đăng xuất</a>
+                                <a href="#" class="nav-link text-left" onclick="removeToken()">Đăng xuất</a>
                             </li>
                         </ul>
                         </ul>
@@ -81,19 +81,20 @@
 				<div class="anh">
 				<label style="color:white">Ảnh:</label></br>
 					<input class="inputanh" type="text" />
-					<input type="file" style="color:white" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
+                    <input type="file" style="color:white; cursor: pointer;" multiple id="image" name="avatar" class="upload-avatar" accept="image/*" onchange="uploadImage(this)">
 				</div>
                 <div>
-                    <button class="buttondb" type="button" align="center" onclick="submitForm()">ĐĂNG BÀI </button>
+                    <button class="buttondb" type="button" align="center" onclick="submitForm()" style="cursor:pointer">ĐĂNG BÀI </button>
                 </div>
 
-            
+
         </form>
 
     </div>
 
 
     <!-- .site-wrap -->
+    <script src="logout.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
