@@ -15,11 +15,11 @@ const authenticated = () => {
   })
   .then(result => result.json())
   .then(user => {
-    alert(user)
     localStorage.setItem('token', user.token);
     window.location.replace('index.html');
   })
   .catch(err => {
+    console.log('@ err ', err)
     alert(err);
   });
 }

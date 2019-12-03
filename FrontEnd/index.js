@@ -3,10 +3,15 @@ function navigateToDetail(id) {
     window.location.href = 'post-detail/detail.html';
 }
  function onLoadIndex() {
-
+    const token = localStorage.getItem('token');
+    if (!token) $('#dang-xuat-btn').hide();
+    else {
+        $('#dang-nhap-btn').hide();
+        $('#dang-ky-btn').hide();
+    }
     const headers = new Headers({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkZDg4ODJhZWUwNjJhMmQ4MDVhYzZjOCIsImlhdCI6MTU3NDQ3MTg2M30.flG8_lVAXy5D-Nt13nkB8_YS1PvehzhEY0YzSJ_5ZNI'
+        'Authorization': token
     });
     fetch('http://localhost:9000/api/components/',{
         method: 'GET',
@@ -43,7 +48,7 @@ function navigateToDetail(id) {
                     div.appendChild(div2);
                     div1.appendChild(div);
                     newsFeed.appendChild(div1);
-            
+
         }
     })
  }
