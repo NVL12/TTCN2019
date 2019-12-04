@@ -14,14 +14,15 @@ const authenticated = () => {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
-            role: 'user',
             access_token: 'masterKey'
         })
     })
         .then(result => result.json())
         .then(user => {
             localStorage.setItem('token', user.token);
-            window.location.replace('index.html');
+            user.role === 'user' ?
+                window.location.replace('index.html') :
+                window.location.replace('Admin.html');
         })
         .catch(err => {
             alert('Tài khoản hoặc mật khẩu không đúng, vui lòng thử lại!');
