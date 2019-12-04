@@ -13,13 +13,12 @@ function navigateToDetail(id) {
         'Content-Type': 'application/json',
         'Authorization': token
     });
-    fetch('http://localhost:9000/api/components/',{
+    fetch('http://127.0.0.1:9000/api/components/',{
         method: 'GET',
         headers: headers
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         let result=data.results;
         console.log(result);
         for (let index = 0; index < result.length; index++) {

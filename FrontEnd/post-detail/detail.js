@@ -18,7 +18,7 @@ async function onLoad() {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
     });
-    await fetch('http://localhost:9000/api/components/' + id, {
+    await fetch('http://127.0.0.1:9000/api/components/' + id, {
         method: 'GET',
         headers: headers
     })

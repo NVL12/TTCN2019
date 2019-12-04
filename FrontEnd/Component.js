@@ -7,32 +7,32 @@ $("#v-pills-posts-tab").click(createListComponent);
 
 function createListComponent(){
    $("#list-place").empty();
-   $.ajax({ 
+   $.ajax({
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
-      }, 
-      type: 'GET',  
-      url: comUrl,  
-      dataType: 'json',  
-      success: function (data) {  
+      },
+      type: 'GET',
+      url: comUrl,
+      dataType: 'json',
+      success: function (data) {
          let listData = [];
          let i = 0;
          $.each(data.results, function(){
             listData[i] = `<li class="">`
-               + `<img src="` + (typeof(data.results[i].images[0]) == "undefined" ? "anh.jpg" : `../Back-end/` + data.results[i].images[0].path)  + `" class="card-img-top" alt="...">`                
+               + `<img src="` + (typeof(data.results[i].images[0]) == "undefined" ? "anh.jpg" : `../Back-end/` + data.results[i].images[0].path)  + `" class="card-img-top" alt="...">`
                + `<h5>` + data.results[i].title + `</h5>`
                + (typeof(data.results[i].description) == "undefined" ? "" : `<p>` + shortingDescription(data.results[i].description) + `</p>`)
                + ` <div id="post-data">
                   <button class="btn btn-primary btn-crud" data-toggle="modal" data-target="#editModal" data-place-id="` + data.results[i].id + `">Edit</button>
-                  <button class="btn btn-danger btn-crud" onclick="deleteItem('` + data.results[i].id + `')">Remove</button>            
+                  <button class="btn btn-danger btn-crud" onclick="deleteItem('` + data.results[i].id + `')">Remove</button>
                </div>
             </li>`;
-            $("#list-place").append(listData[i]);        
+            $("#list-place").append(listData[i]);
             i++;
-         })         
-      }  
-   }); 
+         })
+      }
+   });
 }
 
 function shortingDescription(text){
@@ -47,15 +47,15 @@ $("#editModal").on('shown.bs.modal', function(e){
       $("#modalTitle").text("Update post");
       $("#flag").val("put");
       $("#listImages").empty();
-      $.ajax({ 
+      $.ajax({
          headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
-         }, 
-         type: 'GET',  
-         url: comUrl + '/' + placeId,  
-         dataType: 'json',  
-         success: function (data) {  
+         },
+         type: 'GET',
+         url: comUrl + '/' + placeId,
+         dataType: 'json',
+         success: function (data) {
             let i = 0;
             let listImagesId = "";
             $.each(data.images, function(){
@@ -64,70 +64,70 @@ $("#editModal").on('shown.bs.modal', function(e){
                imagesOnForm.push(data.images[i].id);
                i++;
             });
-            $("#idItem").val(placeId); 
-            $("#titleItem").val(data.title); 
+            $("#idItem").val(placeId);
+            $("#titleItem").val(data.title);
             CKEDITOR.instances.desciptionItem.setData(data.description);
-         }  
-      }); 
+         }
+      });
    }else{
       $("#modalTitle").text("Create post");
       $("#listImages").empty();
-      $("#idItem").val(""); 
-      $("#titleItem").val(""); 
+      $("#idItem").val("");
+      $("#titleItem").val("");
       CKEDITOR.instances.desciptionItem.setData(null);
       $("#flag").val("post");
    }
 });
 
 function deleteImage(id){
-   $.ajax({ 
+   $.ajax({
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
-      }, 
-      type: 'DELETE',  
-      url: imgUrl + '/' + id,  
-      dataType: 'json',  
+      },
+      type: 'DELETE',
+      url: imgUrl + '/' + id,
+      dataType: 'json',
       success: function () {
          if(imagesOnForm.includes(id)) imagesOnForm.splice( $.inArray(id, imagesOnForm), 1 );
          imagesUploaded.splice( $.inArray(id, imagesUploaded), 1 );
          reloadImages();
-      }  
+      }
    });
 }
 
 function reloadImages(){
    $("#listImages").empty();
-   for(let i = 0; i < imagesOnForm.length; i++){ 
-      $.ajax({ 
+   for(let i = 0; i < imagesOnForm.length; i++){
+      $.ajax({
          headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
-         }, 
-         type: 'GET',  
-         url: imgUrl + '/' + imagesOnForm[i],  
-         dataType: 'json',  
-         success: function (data) {  
+         },
+         type: 'GET',
+         url: imgUrl + '/' + imagesOnForm[i],
+         dataType: 'json',
+         success: function (data) {
             $("#listImages").append(`<img src="../Back-end/` + data.path + `" class="card-img-top"  alt="...">
-            <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + (1 + i * 11) + `rem" onclick="deleteImage(\'` + data.id + `\');">x</a>`);      
-         }  
-      }); 
-   }  
+            <a href="#" class="btn btn-secondary position-absolute" style="z-index: 100; left: ` + (1 + i * 11) + `rem" onclick="deleteImage(\'` + data.id + `\');">x</a>`);
+         }
+      });
+   }
 }
 
 function deleteItem(id){
-   $.ajax({ 
+   $.ajax({
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
-      }, 
-      type: 'DELETE',  
-      url: comUrl + '/' + id,  
-      dataType: 'json',  
-      success: function () {  
+      },
+      type: 'DELETE',
+      url: comUrl + '/' + id,
+      dataType: 'json',
+      success: function () {
          $("#v-pills-posts-tab").click();
-      }  
-   }); 
+      }
+   });
 }
 
 $("#updateOk").click(function(){
@@ -137,19 +137,19 @@ $("#updateOk").click(function(){
       images: (imagesOnForm == "" ? [] : imagesOnForm)
    }
 
-   $.ajax({ 
+   $.ajax({
       headers: {
          'Content-Type': 'application/json',
          'Authorization': 'Bearer ' + token
-      },  
-      type: $("#flag").val(),  
+      },
+      type: $("#flag").val(),
       url: comUrl + ($("#flag").val() == "put" ? '/' + $("#idItem").val() : ''),
       contentType: 'application/json',
-      data: JSON.stringify(putData), 
-      success: function () {  
+      data: JSON.stringify(putData),
+      success: function () {
          createListComponent();
-      }  
-   }); 
+      }
+   });
 });
 
 $("#cancelBtn").click(function(){
@@ -173,7 +173,7 @@ function uploadImage(input) {
         form_data.append('files', image);
     }
 
-    fetch('http://localhost:9000/api/images', {
+    fetch('http://127.0.0.1:9000/api/images', {
         method: 'POST',
         headers: headers,
         body: form_data
