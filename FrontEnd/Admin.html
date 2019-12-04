@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="logout.js"></script>
   <style>
     .nav-link.active.show {
       background: #34c3eb;
@@ -85,6 +86,8 @@
           aria-controls="v-pills-profile" aria-selected="false">Accounts</a>
         <a class="nav-link text-white" id="v-pills-posts-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
           aria-controls="v-pills-messages" aria-selected="false">Posts</a>
+          <a class="nav-link text-white" id="v-pills-logout-tab" data-toggle="pill" href="#" role="tab"
+            aria-controls="v-pills-logout" aria-selected="false" onclick="removeToken()">Log out</a>
       </div>
     </div>
     <div class="col-9">
@@ -224,6 +227,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="Users.js"></script>
   <script src="Component.js"></script>
+  <script src="logout.js"></script>
 
 </body>
 
