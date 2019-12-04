@@ -13,6 +13,11 @@ export const notFound = (res) => (entity) => {
   return null
 }
 
+export const error = (res) => (entity) => {
+  if (entity) return entity;
+  return res.status(400).end();
+}
+
 export const authorOrAdmin = (res, user, userField) => (entity) => {
   if (entity) {
     const isAdmin = user.role === 'admin'

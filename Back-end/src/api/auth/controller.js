@@ -1,5 +1,5 @@
 import { sign } from '../../services/jwt'
-import { success } from '../../services/response/'
+import { success, error } from '../../services/response/'
 
 export const login = ({ user, body: { role } }, res, next) => {
   if (user.role !== role) return res.status(401).json({ message: 'You\'re unauthorized!' });
@@ -7,5 +7,5 @@ export const login = ({ user, body: { role } }, res, next) => {
   return sign(user.id)
     .then((token) => ({ token, user: user.view(true) }))
     .then(success(res, 201))
-    .catch(next)
+    .catch(error(res))
 }
