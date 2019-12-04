@@ -26,5 +26,6 @@ const authenticated = () => {
         })
         .catch(err => {
             alert('Tài khoản hoặc mật khẩu không đúng, vui lòng thử lại!');
+            window.location.reload();
         });
 }

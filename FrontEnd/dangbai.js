@@ -28,7 +28,7 @@ function submitForm() {
     );
     console.log(JSON.stringify(postDetail));
 
-    fetch('http://localhost:9000/api/components/', {
+    fetch('http://127.0.0.1:9000/api/components/', {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(postDetail)
@@ -59,7 +59,7 @@ function uploadImage(input) {
         form_data.append('files', image);
     }
 
-    fetch('http://localhost:9000/api/images', {
+    fetch('http://127.0.0.1:9000/api/images', {
         method: 'POST',
         headers: headers,
         body: form_data
