@@ -66,7 +66,7 @@ $("#editModal").on('shown.bs.modal', function(e){
             });
             $("#idItem").val(placeId); 
             $("#titleItem").val(data.title); 
-            $("#desciptionItem") .val(data.description);   
+            CKEDITOR.instances.desciptionItem.setData(data.description);
          }  
       }); 
    }else{
@@ -74,7 +74,7 @@ $("#editModal").on('shown.bs.modal', function(e){
       $("#listImages").empty();
       $("#idItem").val(""); 
       $("#titleItem").val(""); 
-      $("#desciptionItem") .val(""); 
+      CKEDITOR.instances.desciptionItem.setData(null);
       $("#flag").val("post");
    }
 });
@@ -133,7 +133,7 @@ function deleteItem(id){
 $("#updateOk").click(function(){
    let putData = {
       title: $("#titleItem").val(),
-      description: $("#desciptionItem").val(),
+      description: CKEDITOR.instances.desciptionItem.getData(),
       images: (imagesOnForm == "" ? [] : imagesOnForm)
    }
 

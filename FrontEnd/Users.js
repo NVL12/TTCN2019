@@ -52,16 +52,16 @@ $("#userCreateBtn").click(function(){
       return;
    }
    let postData = {
-      "access_token": "masterKey",
-      "email": $("#emailUser").val(),
-      "password": $("#passwordUser").val(),
-      "name": $("#nameUser").val(),
-      "role": $("#roleUser").val()
+      access_token: "masterKey",
+      email: $("#emailUser").val(),
+      password: $("#passwordUser").val(),
+      name: $("#nameUser").val(),
+      role: $("#roleUser").val()
    };
+   console.log(JSON.stringify(postData));
    $.ajax({  
       headers: {
          'Content-Type': 'application/json',
-         'Authorization': 'Bearer ' + token
       },
       type: 'post',
       url: usersUrl,        
@@ -81,10 +81,10 @@ function deleteUser(id){
          'Authorization': 'Bearer ' + token
       }, 
       type: 'DELETE',  
-      url: userUrl + '/' + id,  
+      url: usersUrl + '/' + id,  
       dataType: 'json',  
       success: function () {  
-         $("#v-pills-posts-tab").click();
+         $("#v-pills-accounts-tab").click();
       }  
    }); 
 }
