@@ -18,9 +18,9 @@ const authenticated = () => {
         })
     })
         .then(result => result.json())
-        .then(user => {
-            localStorage.setItem('token', user.token);
-            user.role === 'user' ?
+        .then(data => {
+            localStorage.setItem('token', data.token);
+            data.user.role === 'user' ?
                 window.location.replace('index.html') :
                 window.location.replace('Admin.html');
         })
